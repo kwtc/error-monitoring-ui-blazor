@@ -1,0 +1,45 @@
+﻿@page "/reports"
+@using Kwtc.ErrorMonitoring.Ui.Application.Models
+@using MediatR
+@using Kwtc.ErrorMonitoring.Ui.Application.Event.Queries
+@inject IMediator Mediator
+
+<PageTitle>Reports</PageTitle>
+
+<h1>Reports</h1>
+
+@if (reports == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Created</th>
+            <th>Event</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var report in reports)
+        {
+            <tr>
+                <td>@report.CreatedAt</td>
+                <td>@report.Id</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Report[]? reports;
+
+    protected override async Task OnInitializedAsync()
+    {
+        reports = (await Mediator.Send(new GetReportsQuery())).ToArray();
+    }
+}
