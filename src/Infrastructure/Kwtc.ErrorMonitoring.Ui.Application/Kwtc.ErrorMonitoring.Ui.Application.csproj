@@ -7,4 +7,15 @@
     <LangVersion>11</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Flurl" Version="3.0.7" />
+    <PackageReference Include="Flurl.Http" Version="3.2.4" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Kwtc.ErrorMonitoring.Ui.Application.Abstractions\Kwtc.ErrorMonitoring.Ui.Application.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>

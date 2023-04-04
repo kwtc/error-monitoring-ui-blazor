@@ -7,4 +7,8 @@
     <LangVersion>11</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\Kwtc.ErrorMonitoring.Ui.Application\Kwtc.ErrorMonitoring.Ui.Application.csproj" />
+  </ItemGroup>
+
 </Project>
